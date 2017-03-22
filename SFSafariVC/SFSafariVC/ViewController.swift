@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
-
+    private var urlString:String = "https://www.w3schools.com/js/tryit.asp?filename=tryjs_cookie_username"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,7 +23,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func openSFSafariViewController(_ sender: UIButton) {
+        let svc = SFSafariViewController(url: NSURL(string: self.urlString)! as URL)
+        present(svc, animated: true, completion: nil)
     }
-
 }
-
