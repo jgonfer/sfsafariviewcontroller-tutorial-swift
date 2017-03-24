@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,30 +21,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0C-gR-yDn">
-                                <rect key="frame" x="75" y="313" width="225" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="a0C-gR-yDn">
+                                <rect key="frame" x="70" y="230" width="235" height="40"/>
+                                <color key="backgroundColor" red="0.91089612245559692" green="0.65614532670959447" blue="0.24450303193631212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="AUA-Bt-2mh"/>
+                                    <constraint firstAttribute="width" constant="235" id="AUA-Bt-2mh"/>
                                     <constraint firstAttribute="height" constant="40" id="YcB-jf-8tp"/>
                                 </constraints>
-                                <state key="normal" title="Open SFSafariViewController"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Open In-App Browser">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="openSFSafariViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aaA-Xv-2U6"/>
+                                    <action selector="openInAppBrowser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="exO-L1-gsf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="bJb-Gg-I2o">
+                                <rect key="frame" x="70" y="396" width="235" height="40"/>
+                                <color key="backgroundColor" red="0.91089612249999996" green="0.65614532670000003" blue="0.2445030319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="235" id="JqC-sV-kxf"/>
+                                    <constraint firstAttribute="height" constant="40" id="eSl-8h-FnT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Open Reader Mode">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openReaderMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXn-Ko-wel"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="bJb-Gg-I2o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RGg-2l-k39"/>
                             <constraint firstItem="a0C-gR-yDn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aKY-UC-SZC"/>
-                            <constraint firstItem="a0C-gR-yDn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-0.5" id="pDY-DP-fg8"/>
+                            <constraint firstItem="bJb-Gg-I2o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.25" id="nOU-Yh-6bH"/>
+                            <constraint firstItem="a0C-gR-yDn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.75" id="pDY-DP-fg8"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="openButton" destination="a0C-gR-yDn" id="Yar-Nk-fkn"/>
+                        <outlet property="openBrowserButton" destination="a0C-gR-yDn" id="WnW-m5-8X8"/>
+                        <outlet property="openReaderButton" destination="bJb-Gg-I2o" id="p9M-qy-nvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
