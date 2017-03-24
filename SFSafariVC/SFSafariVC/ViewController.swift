@@ -29,6 +29,7 @@ class ViewController: UIViewController {
 
     @IBAction func openSFSafariViewController(_ sender: UIButton) {
         let svc = SFSafariViewController(url: NSURL(string: self.urlString)! as URL)
+        svc.delegate = self
         if #available(iOS 10.0, *) {
             // The color to tint the background of the navigation bar and the toolbar.
             svc.preferredBarTintColor = .orange
