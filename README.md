@@ -1,5 +1,5 @@
 ### SFSafariViewController Tutorial for Swift 3
-[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=58d3d0155223860001760619&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/58ad1da0b6bc0901002edae5/build/latest?branch=swift-3.0.2)
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=58d3d0155223860001760619&branch=swift-3.0.2&build=latest)](https://dashboard.buddybuild.com/apps/58d3d0155223860001760619/build/latest?branch=swift-3.0.2)
 [![platform](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat)](https://developer.apple.com/ios/)
 [![env](https://img.shields.io/badge/env-xcode_8.2.1-lightgrey.svg?style=flat)](https://developer.apple.com/xcode/)
 [![swift](https://img.shields.io/badge/swift-3.0.2-orange.svg?style=flat)](https://swift.org/)
