@@ -9,6 +9,8 @@
 import UIKit
 import SafariServices
 
+let deepLinkingNotification = "deep_linking"
+
 class ViewController: UIViewController {
     @IBOutlet weak var openBrowserButton: UIButton!
     @IBOutlet weak var openReaderButton: UIButton!
@@ -34,6 +36,10 @@ class ViewController: UIViewController {
         openDeepLinking.layer.cornerRadius = 10
         openDeepLinking.setTitleColor(.white, for: .normal)
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,6 +61,12 @@ class ViewController: UIViewController {
             svc.preferredControlTintColor = .white
         } else {
             // Fallback on earlier versions
+        }
+        if color == green {
+            NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: deepLinkingNotification), object: nil, queue: nil) { (_) in
+                // Dismiss the In-app Browser (SFSafariViewController) when the user taps a Deep Linking button 👌
+                svc.dismiss(animated: true, completion: nil)
+            }
         }
         present(svc, animated: true, completion: nil)
     }
