@@ -12,18 +12,27 @@ import SafariServices
 class ViewController: UIViewController {
     @IBOutlet weak var openBrowserButton: UIButton!
     @IBOutlet weak var openReaderButton: UIButton!
+    @IBOutlet weak var openDeepLinking: UIButton!
     
-    private var urlString:String = "https://www.w3schools.com/js/tryit.asp?filename=tryjs_cookie_username"
+    private var urlInAppBrowser:String = "https://www.w3schools.com/js/tryit.asp?filename=tryjs_cookie_username"
+    private var urlDeepLinking:String = "https://jgonfer.com/misc/deep_linking.php"
+    
+    let orange = UIColor(red:0.91, green:0.66, blue:0.29, alpha:1.00)
+    let blue = UIColor(red:0.04, green:0.69, blue:0.87, alpha:1.00)
+    let green = UIColor(red:0.54, green:0.82, blue:0.30, alpha:1.00)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        openBrowserButton.backgroundColor = .orange
+        openBrowserButton.backgroundColor = orange
         openBrowserButton.layer.cornerRadius = 10
         openBrowserButton.setTitleColor(.white, for: .normal)
-        openReaderButton.backgroundColor = .blue
+        openReaderButton.backgroundColor = blue
         openReaderButton.layer.cornerRadius = 10
         openReaderButton.setTitleColor(.white, for: .normal)
+        openDeepLinking.backgroundColor = green
+        openDeepLinking.layer.cornerRadius = 10
+        openDeepLinking.setTitleColor(.white, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,12 +41,16 @@ class ViewController: UIViewController {
     }
     
     fileprivate func openBrowser(withReaderMode readerMode: Bool) {
-        let svc = SFSafariViewController(url: NSURL(string: self.urlString)! as URL, entersReaderIfAvailable: readerMode)
+        openInAppSafariBrowser(url: self.urlInAppBrowser, color: readerMode ? blue : orange, reader: readerMode)
+    }
+    
+    fileprivate func openInAppSafariBrowser(url: String, color: UIColor, reader: Bool) {
+        let svc = SFSafariViewController(url: NSURL(string: url)! as URL, entersReaderIfAvailable: reader)
         // You can also init the view controller with the SFSafariViewController:url: method
         svc.delegate = self
         if #available(iOS 10.0, *) {
             // The color to tint the background of the navigation bar and the toolbar.
-            svc.preferredBarTintColor = readerMode ? .blue : .orange
+            svc.preferredBarTintColor = color
             // The color to tint the the control buttons on the navigation bar and the toolbar.
             svc.preferredControlTintColor = .white
         } else {
@@ -52,6 +65,10 @@ class ViewController: UIViewController {
     
     @IBAction func openReaderMode(_ sender: UIButton) {
         openBrowser(withReaderMode: true)
+    }
+    
+    @IBAction func openDeepLinking(_ sender: UIButton) {
+        openInAppSafariBrowser(url: self.urlDeepLinking, color: green, reader: false)
     }
 }
 

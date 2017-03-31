@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="a0C-gR-yDn">
-                                <rect key="frame" x="70" y="230" width="235" height="40"/>
+                                <rect key="frame" x="70" y="147" width="235" height="40"/>
                                 <color key="backgroundColor" red="0.91089612245559692" green="0.65614532670959447" blue="0.24450303193631212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="235" id="AUA-Bt-2mh"/>
@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="bJb-Gg-I2o">
-                                <rect key="frame" x="70" y="396" width="235" height="40"/>
+                                <rect key="frame" x="70" y="313.5" width="235" height="40"/>
                                 <color key="backgroundColor" red="0.91089612249999996" green="0.65614532670000003" blue="0.2445030319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="235" id="JqC-sV-kxf"/>
@@ -51,17 +51,35 @@
                                     <action selector="openReaderMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXn-Ko-wel"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="SVf-P8-HOr">
+                                <rect key="frame" x="70" y="480.5" width="235" height="40"/>
+                                <color key="backgroundColor" red="0.91089612249999996" green="0.65614532670000003" blue="0.2445030319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VsE-bk-swo"/>
+                                    <constraint firstAttribute="width" constant="235" id="X7O-fo-ZXw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Open Deep Linking">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openDeepLinking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RWz-MV-vyo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="SVf-P8-HOr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9JX-I9-kCf"/>
                             <constraint firstItem="bJb-Gg-I2o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RGg-2l-k39"/>
                             <constraint firstItem="a0C-gR-yDn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aKY-UC-SZC"/>
-                            <constraint firstItem="bJb-Gg-I2o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.25" id="nOU-Yh-6bH"/>
-                            <constraint firstItem="a0C-gR-yDn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.75" id="pDY-DP-fg8"/>
+                            <constraint firstItem="bJb-Gg-I2o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nOU-Yh-6bH"/>
+                            <constraint firstItem="a0C-gR-yDn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="pDY-DP-fg8"/>
+                            <constraint firstItem="SVf-P8-HOr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="xaJ-oc-QNt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="openBrowserButton" destination="a0C-gR-yDn" id="WnW-m5-8X8"/>
+                        <outlet property="openDeepLinking" destination="SVf-P8-HOr" id="Gzd-ma-GUG"/>
                         <outlet property="openReaderButton" destination="bJb-Gg-I2o" id="p9M-qy-nvQ"/>
                     </connections>
                 </viewController>
