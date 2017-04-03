@@ -41,6 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        // Handle the URL Scheme call from a browser. This is a simple handler and we don't take care about the path of the URL Scheme.
+        // Call the block code added to the observer in our ViewController
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: deepLinkingNotification), object: nil)
+        return true
+    }
 }
 
